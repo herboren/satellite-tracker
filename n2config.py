@@ -4,7 +4,7 @@ import os, pathlib
 class ConfigSatTracker():
 
     # Save sat tracker
-    def svsttrkr():
+    def svsttrkr(self):
         config = configparser.RawConfigParser()
         # Case sensitivity
         config.optionxform=str
@@ -19,6 +19,10 @@ class ConfigSatTracker():
             'seconds': 0,
             'apiKey=': os.environ.get('n2yo_api')
 
+        }
+
+        config['SATELLITES'] = {
+            
         }
 
         # Save Config
