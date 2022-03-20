@@ -17,7 +17,8 @@ def ConfigUrl():
     for category in conf_st.sections():
         # Assign parameters if present
         if category == 'SAT-TRACKER':
-            for key, value in conf_st.sections(category)
+            for key, value in conf_st.sections(category):
+                if value != 0
 
 
 def GetJsonRequest():
