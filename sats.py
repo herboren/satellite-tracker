@@ -18,7 +18,7 @@ response = requests.get(base_url, headers=header)
 soup = BeautifulSoup(response.text, 'html.parser')
 for a in soup.find_all('a', href=True):
     if '?c=' in re.sub('[^?c=0-9]', '', a['href']):
-        hrefs[re.sub('^[\s]+','',a.text)]=re.sub('[^?c=0-9]', '', a['href'])
+        hrefs[re.sub('^[\s]+','',a.text)]=re.sub('\/([\w]+)\/|\/[\w]+', '', a['href'])
 
 for k, v in hrefs.items():
     print(f'Key: {k} Value: {v}')
