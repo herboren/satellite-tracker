@@ -23,8 +23,9 @@ hrefs = {}
 response = requests.get(base_url, headers=header)
 soup = BeautifulSoup(response.text, 'html.parser')
 table = soup.find('table', class_='footable table')
-for a in table.find_all('a', href=True):    
-    hrefs[a.text]=a['href']
+for a in table.find_all('a', href=True):  
+    hrefs.update({a.text:a['href']})
+    #hrefs[a.text]=a['href']
 
 # Build URL config ata
 config = configparser.RawConfigParser()
